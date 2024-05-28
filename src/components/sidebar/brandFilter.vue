@@ -9,8 +9,6 @@ const selectedFilters = ref<string[]>([]);
 const isExpanded = ref(true);
 
 await fetchBrands();
-
-console.log(brands.value);
 </script>
 
 <template>
