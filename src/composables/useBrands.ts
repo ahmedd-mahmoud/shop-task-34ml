@@ -3,7 +3,7 @@ import { BaseResponse, BrandResponse } from "../types/api";
 
 const api = "https://grab-n-go.dashboard.hbm.studio/api/v1/brands";
 
-export default function useCategory() {
+export default function useBrands() {
   const brands = ref<BaseResponse<BrandResponse[]> | null>(null);
 
   const fetchBrands = async () => {
