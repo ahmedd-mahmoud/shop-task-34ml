@@ -12,7 +12,7 @@ import productsList from "./components/product/list.vue";
       <Header />
       <Navbar />
       <Breadcrumb />
-      <main class="flex w-full">
+      <main class="flex gap-10 w-full">
         <sidebar class="basis-1/5" />
         <productsList class="basis-4/5" />
       </main>

@@ -11,7 +11,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="flex flex-col items-center">
+  <div class="flex flex-col items-start">
     <img
       :src="brand.featured_image"
       alt="brand.name"
