@@ -6,12 +6,14 @@ import sidebar from "./components/sidebar/index.vue";
 </script>
 
 <template>
-  <div class="flex flex-col">
-    <Header />
-    <Navbar />
-    <Breadcrumb />
-    <main class="flex">
-      <sidebar />
-    </main>
-  </div>
+  <Suspense>
+    <div class="flex flex-col">
+      <Header />
+      <Navbar />
+      <Breadcrumb />
+      <main class="flex">
+        <sidebar />
+      </main>
+    </div>
+  </Suspense>
 </template>
