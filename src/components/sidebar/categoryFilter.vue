@@ -6,6 +6,7 @@ import filterList from "../common/filterList.vue";
 const { categories, fetchCategories } = useCategory();
 
 const selectedFilters = ref<string[]>([]);
+const isExpanded = ref(true);
 
 await fetchCategories();
 </script>
@@ -16,5 +17,7 @@ await fetchCategories();
     title="Category"
     v-model:selectedFilters="selectedFilters"
     :list="categories.data"
+    :expand="isExpanded"
+    @expandClicked="isExpanded = !isExpanded"
   />
 </template>

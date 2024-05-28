@@ -6,6 +6,7 @@ import filterList from "../common/filterList.vue";
 const { brands, fetchBrands } = useBrands();
 
 const selectedFilters = ref<string[]>([]);
+const isExpanded = ref(true);
 
 await fetchBrands();
 
@@ -18,5 +19,7 @@ console.log(brands.value);
     title="Brand"
     v-model:selectedFilters="selectedFilters"
     :list="brands.data"
+    :expand="isExpanded"
+    @expandClicked="isExpanded = !isExpanded"
   />
 </template>
