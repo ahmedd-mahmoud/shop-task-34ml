@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import searchIcon from "../../assets/icons/search-icon.svg";
 
-const searchValue = defineModel("search-value", {
+const searchValue = defineModel("value", {
   type: String,
 });
 
