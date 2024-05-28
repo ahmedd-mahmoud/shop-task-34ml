@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        text: "#1B1C1E",
+        title: "#1B1C1E",
         subtitle: "#C1C1C1",
         surface: "#FFFFFF",
         buttonBg: "#00ABEB",
