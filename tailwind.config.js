@@ -2,7 +2,15 @@
 export default {
   content: ["./index.html", "./src/**/*.{vue,js,ts}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        text: "#1B1C1E",
+        subtitle: "#C1C1C1",
+        surface: "#FFFFFF",
+        buttonBg: "#00ABEB",
+        inputBg: "#F3F3F3",
+      },
+    },
   },
   plugins: [],
 };
