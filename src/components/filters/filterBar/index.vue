@@ -17,7 +17,7 @@ const filterItems = computed(() => {
 });
 
 const removeFilter = (filter: SelectedFilter) => {
-  if (filter.type === "category") {
+  if (filter.type === "categories") {
     selectedCategoryFilters.value = selectedCategoryFilters.value.filter(
       (item) => item.id !== filter.id
     );

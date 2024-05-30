@@ -20,7 +20,7 @@ const navigationButtons = [
 
 <template>
   <div
-    class="flex lg:justify-center gap-10 py-3 pl-6 sm:pl-12 lg:pl-0 bg-surface"
+    class="flex lg:justify-center gap-8 py-3 pl-6 sm:pl-12 lg:pl-0 bg-surface"
   >
     <commonButton
       v-for="button in navigationButtons"
