@@ -31,5 +31,6 @@ const typeClass = {
     <span v-if="text" :class="icon && text ? 'hidden md:inline' : ''">
       {{ text }}
     </span>
+    <slot />
   </button>
 </template>
