@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import categoryFilter from "./categoryFilter.vue";
-import brandFilter from "./brandFilter.vue";
+import categoryFilter from "../filters/categoryFilter.vue";
+import brandFilter from "../filters/brandFilter.vue";
 </script>
 
 <template>

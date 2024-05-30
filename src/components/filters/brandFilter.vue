@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import useBrands from "../../composables/useBrands.ts";
-import filterList from "../common/filterList.vue";
+import filterList from "./filterList.vue";
 
 const { brands, fetchBrands } = useBrands();
 

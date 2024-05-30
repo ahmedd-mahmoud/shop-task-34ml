@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import useCategory from "../../composables/useCategory.ts";
-import filterList from "../common/filterList.vue";
+import filterList from "./filterList.vue";
 
 const { categories, fetchCategories } = useCategory();
 

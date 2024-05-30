@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import categoryFilter from "../sidebar/categoryFilter.vue";
-import brandFilter from "../sidebar/brandFilter.vue";
+import categoryFilter from "./categoryFilter.vue";
+import brandFilter from "./brandFilter.vue";
 import commonButton from "../common/button.vue";
 import menuIcon from "../../assets/icons/menu-icon.svg";
 import closeIcon from "../../assets/icons/close-icon.svg";
