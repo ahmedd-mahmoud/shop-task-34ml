@@ -20,7 +20,7 @@ const headerButtons = [
 </script>
 
 <template>
-  <div class="flex w-full items-center justify-between py-5 px-12">
+  <div class="flex w-full items-center justify-between py-5 px-6 sm:px-12">
     <p class="text-xl font-bold md:text-2xl">LOGO</p>
     <div class="flex items-center gap-3 md:gap-5">
       <div

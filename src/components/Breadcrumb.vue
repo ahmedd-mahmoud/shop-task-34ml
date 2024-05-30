@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-2 border-t py-5 px-12 text-[13px]">
+  <div class="flex gap-2 border-t py-5 px-6 sm:px-12 text-[13px]">
     <button class="">Home</button>
     <span class="text-subtitle">/</span>
     <button class="">Furniture</button>

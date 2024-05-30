@@ -10,7 +10,7 @@ console.log(products.value);
 </script>
 
 <template>
-  <div class="flex justify-center sm:justify-start flex-wrap gap-5">
+  <div class="flex justify-center grow flex-wrap gap-5">
     <item v-for="brand in products?.data" :key="brand.id" :brand="brand" />
   </div>
 </template>
