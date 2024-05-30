@@ -9,7 +9,7 @@ defineProps({
     type: String,
   },
   type: {
-    type: String as PropType<"solid" | "outline" | "icon">,
+    type: String as PropType<"solid" | "outline" | "link">,
     default: "solid",
   },
 });
@@ -17,17 +17,19 @@ defineProps({
 const typeClass = {
   solid: "bg-buttonBg text-white hover:bg-buttonBg/80",
   outline: "text-buttonBg border border-buttonBg hover:bg-buttonBg/20",
-  icon: "hover:opacity-80",
+  link: "hover:opacity-70",
 };
 </script>
 
 <template>
   <button
-    class="flex items-center font-bold text-[16px] rounded-lg p-1"
+    class="flex items-center gap-2 rounded-lg"
     :class="typeClass[type]"
     @click="$emit('click')"
   >
-    <span v-if="text">{{ text }}</span>
-    <img v-if="icon" :src="icon" alt="icon" :class="typeClass.icon" />
+    <img v-if="icon" :src="icon" alt="icon" :class="typeClass.link" />
+    <span v-if="text" :class="icon && text ? 'hidden md:inline' : ''">
+      {{ text }}
+    </span>
   </button>
 </template>
