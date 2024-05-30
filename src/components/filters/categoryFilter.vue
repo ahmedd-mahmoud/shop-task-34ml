@@ -13,7 +13,7 @@ await fetchCategories();
 <template>
   <filterList
     v-if="categories"
-    title="Category"
+    title="Categories"
     v-model:selectedFilters="selectedCategoryFilters"
     :list="categories.data"
     :expand="isExpanded"

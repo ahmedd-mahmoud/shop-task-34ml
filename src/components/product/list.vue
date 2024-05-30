@@ -1,13 +1,22 @@
 <script setup lang="ts">
+import { computed, watchEffect } from "vue";
 import useProducts from "../../composables/useProducts.ts";
+import useCategory from "../../composables/useCategory.ts";
+import useBrands from "../../composables/useBrands.ts";
 import item from "./item.vue";
 import filterBar from "../filters/filterBar/index.vue";
 
 const { products, fetchProducts } = useProducts();
+const { selectedCategoryFilters } = useCategory();
+const { selectedBrandFilters } = useBrands();
 
-await fetchProducts();
+const filterItems = computed(() => {
+  return [...selectedCategoryFilters.value, ...selectedBrandFilters.value];
+});
 
-console.log(products.value);
+watchEffect(async () => {
+  await fetchProducts(filterItems.value);
+});
 </script>
 
 <template>

@@ -13,7 +13,7 @@ await fetchBrands();
 <template>
   <filterList
     v-if="brands"
-    title="Brand"
+    title="Brands"
     v-model:selectedFilters="selectedBrandFilters"
     :list="brands.data"
     :expand="isExpanded"
