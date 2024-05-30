@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import menuIcon from "../assets/icons/menu-icon.svg";
+import filterMenu from "./filters/filterMenu.vue";
 
 const navigationButtons = [
   "Grocery",
@@ -28,6 +28,6 @@ const navigationButtons = [
       {{ button }}
     </button>
 
-    <img :src="menuIcon" alt="Menu" class="w-6 h-6 lg:hidden" />
+    <filterMenu />
   </div>
 </template>

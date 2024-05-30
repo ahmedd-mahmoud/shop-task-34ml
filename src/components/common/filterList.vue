@@ -38,7 +38,7 @@ const handleSearch = () => {
 <template>
   <div class="flex flex-col gap-4">
     <div class="flex justify-between items-center">
-      <h2 class="font-bold text-[16px]">{{ title }}</h2>
+      <h2 class="lg:font-bold lg:text-[16px]">{{ title }}</h2>
       <button class="text-3xl" @click="$emit('expandClicked')">
         <img
           :src="expand ? minusIcon : plusIcon"
@@ -68,4 +68,5 @@ const handleSearch = () => {
       <span v-if="item.products_count">({{ item.products_count }})</span>
     </div>
   </div>
+  <span class="border-t" />
 </template>
