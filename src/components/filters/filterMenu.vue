@@ -34,7 +34,16 @@ const clearAllFilters = () => {
         <div
           class="flex justify-between items-center py-4 border-b px-5 sm:px-10"
         >
-          <h1 class="font-bold">Filter By</h1>
+          <h1 class="font-bold">
+            Filter By
+            {{
+              selectedCategoryFilters.length + selectedBrandFilters.length
+                ? `(${
+                    selectedCategoryFilters.length + selectedBrandFilters.length
+                  })`
+                : ""
+            }}
+          </h1>
           <commonButton
             :icon="closeIcon"
             type="link"
