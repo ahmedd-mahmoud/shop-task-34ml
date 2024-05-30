@@ -8,6 +8,7 @@ import item from "./item.vue";
 import filterBar from "../filters/filterBar/index.vue";
 import pagination from "../common/pagination.vue";
 import loadingIcon from "../../assets/icons/loading-icon.svg";
+import emptyIcon from "../../assets/icons/empty-indicator.svg";
 
 const { products, fetchProducts } = useProducts();
 const { selectedCategoryFilters } = useCategory();
@@ -41,6 +42,15 @@ watchEffect(async () => {
       <item v-for="brand in products.data" :key="brand.id" :brand="brand" />
     </div>
     <img v-else :src="loadingIcon" alt="Loading" class="w-56 self-center" />
+
+    <div
+      v-show="!products.data.length"
+      class="flex flex-col justify-center items-center gap-2"
+    >
+      <img :src="emptyIcon" alt="No data" class="w-16" />
+      <p class="text-xl">No Product found</p>
+    </div>
+
     <pagination v-model:page="currentPage" :listInfo="products.pagination" />
   </div>
 </template>
