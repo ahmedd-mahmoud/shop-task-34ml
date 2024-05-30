@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { PropType, ref } from "vue";
+
 import searchbar from "../common/searchbar.vue";
 import plusIcon from "../../assets/icons/plus.svg";
 import minusIcon from "../../assets/icons/minus.svg";
@@ -43,6 +44,7 @@ const handleSearch = () => {
         <img
           :src="expand ? minusIcon : plusIcon"
           :alt="expand ? 'minus' : 'plus'"
+          class="hover:opacity-70"
         />
       </button>
     </div>

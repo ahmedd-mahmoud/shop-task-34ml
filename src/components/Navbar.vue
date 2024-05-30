@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import commonButton from "./common/button.vue";
 import filterMenu from "./filters/filterMenu.vue";
 
 const navigationButtons = [
@@ -21,12 +22,12 @@ const navigationButtons = [
   <div
     class="flex lg:justify-center gap-10 py-3 pl-6 sm:pl-12 lg:pl-0 bg-surface"
   >
-    <button
+    <commonButton
       v-for="button in navigationButtons"
+      :text="button"
+      type="link"
       class="font-bold hidden lg:flex"
-    >
-      {{ button }}
-    </button>
+    />
 
     <filterMenu />
   </div>

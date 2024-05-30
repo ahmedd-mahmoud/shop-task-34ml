@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { PropType } from "vue";
 import { ProductResponse } from "../../types/api";
+import commonButton from "../common/button.vue";
 import wishlistIcon from "../../assets/icons/wishlist.svg";
 
 defineProps({
@@ -19,9 +20,11 @@ defineProps({
         alt="brand.name"
         class="w-full h-[296px] object-cover"
       />
-      <button class="absolute top-2 right-2 p-2 bg-white rounded-full">
-        <img :src="wishlistIcon" alt="Add to wishlist" />
-      </button>
+      <commonButton
+        :icon="wishlistIcon"
+        type="link"
+        class="absolute top-2 right-2 p-2 bg-white !rounded-full"
+      />
     </div>
     <p class="text-lg">{{ brand.title }}</p>
     <p class="font-bold text-lg">{{ brand.default_variant.price }}</p>

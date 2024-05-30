@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import commonButton from "./common/button.vue";
 import accountIcon from "../assets/icons/account.svg";
 import wishlistIcon from "../assets/icons/wishlist.svg";
 import cartIcon from "../assets/icons/cart.svg";
@@ -27,8 +28,7 @@ const headerButtons = [
         v-for="button in headerButtons"
         class="flex items-center gap-1 hover:cursor-pointer"
       >
-        <img :src="button.icon" :alt="button.text" />
-        <span class="hidden md:inline">{{ button.text }}</span>
+        <commonButton :text="button.text" :icon="button.icon" type="link" />
       </div>
     </div>
   </div>

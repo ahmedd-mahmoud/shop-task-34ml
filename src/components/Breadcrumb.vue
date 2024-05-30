@@ -1,9 +1,13 @@
+<script setup lang="ts">
+import commonButton from "./common/button.vue";
+</script>
+
 <template>
   <div class="flex gap-2 border-t py-5 px-6 sm:px-12 text-[13px]">
-    <button class="">Home</button>
+    <commonButton text="Home" type="link" />
     <span class="text-subtitle">/</span>
-    <button class="">Furniture</button>
+    <commonButton text="Furniture" type="link" />
     <span class="text-subtitle">/</span>
-    <button class="text-subtitle">Dining Room Tables</button>
+    <commonButton text="Dining Room Tables" type="link" class="text-subtitle" />
   </div>
 </template>

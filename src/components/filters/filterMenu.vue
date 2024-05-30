@@ -11,7 +11,7 @@ const isMenuOpen = ref(false);
 
 <template>
   <div class="lg:hidden">
-    <commonButton :icon="menuIcon" type="icon" @click="isMenuOpen = true" />
+    <commonButton :icon="menuIcon" type="link" @click="isMenuOpen = true" />
     <div
       class="flex flex-col gap-4 fixed left-0 top-0 z-10 w-full h-full overflow-auto bg-white transition-transform duration-500"
       :class="isMenuOpen ? 'translate-x-0' : '-translate-x-full'"
@@ -22,7 +22,7 @@ const isMenuOpen = ref(false);
         <h1 class="font-bold">Filter By</h1>
         <commonButton
           :icon="closeIcon"
-          type="icon"
+          type="link"
           @click="isMenuOpen = false"
         />
       </div>
@@ -31,7 +31,9 @@ const isMenuOpen = ref(false);
         <brandFilter />
       </div>
 
-      <div class="flex justify-between items-center py-4 px-5 sm:px-10">
+      <div
+        class="flex justify-between items-center font-bold text-[16px] py-4 px-5 sm:px-10"
+      >
         <commonButton text="Clear All" type="outline" class="h-12 px-3" />
         <commonButton
           text="View {number} items"
