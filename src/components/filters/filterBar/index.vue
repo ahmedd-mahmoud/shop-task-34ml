@@ -35,7 +35,7 @@ const removeFilter = (filter: string) => {
     <commonButton
       :icon="filterIcon"
       type="link"
-      class="flex py-1 px-2 md:pl-2 md:pr-10 lg:border lg:border-gray-500 lg:!rounded-[4px] text-title"
+      class="flex py-1 px-2 md:pl-2 md:pr-10 lg:mr-3 lg:border lg:border-gray-500 lg:!rounded-[4px] text-title"
     >
       <span class="inline lg:hidden font-bold">
         Filter
@@ -47,7 +47,7 @@ const removeFilter = (filter: string) => {
       >
     </commonButton>
     <div
-      class="flex gap-2 w-fit max-w-64 min-[550px]:max-w-[500px] lg:pl-2 scrollbar-hidden overflow-x-auto"
+      class="flex gap-2 w-fit max-w-64 min-[550px]:max-w-[500px] scrollbar-hidden overflow-x-auto"
     >
       <filterBarItems
         v-for="item in filterItems"
