@@ -1,7 +1,7 @@
 import { ref } from "vue";
-import { BaseResponse, BrandResponse } from "../types/api";
+import { BaseResponse, BrandResponse, SelectedFilter } from "../types/api";
 
-const selectedBrandFilters = ref<string[]>([]);
+const selectedBrandFilters = ref<SelectedFilter[]>([]);
 
 const api = "https://grab-n-go.dashboard.hbm.studio/api/v1/brands";
 

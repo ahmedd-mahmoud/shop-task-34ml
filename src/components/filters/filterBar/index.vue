@@ -6,6 +6,7 @@ import useCategory from "../../../composables/useCategory";
 import useBrands from "../../../composables/useBrands";
 import { computed } from "vue";
 import useProducts from "../../../composables/useProducts";
+import { SelectedFilter } from "../../../types/api";
 
 const { selectedCategoryFilters } = useCategory();
 const { selectedBrandFilters } = useBrands();
@@ -15,14 +16,14 @@ const filterItems = computed(() => {
   return [...selectedCategoryFilters.value, ...selectedBrandFilters.value];
 });
 
-const removeFilter = (filter: string) => {
-  if (selectedCategoryFilters.value.includes(filter)) {
+const removeFilter = (filter: SelectedFilter) => {
+  if (filter.type === "category") {
     selectedCategoryFilters.value = selectedCategoryFilters.value.filter(
-      (item) => item !== filter
+      (item) => item.id !== filter.id
     );
   } else {
     selectedBrandFilters.value = selectedBrandFilters.value.filter(
-      (item) => item !== filter
+      (item) => item.id !== filter.id
     );
   }
 };

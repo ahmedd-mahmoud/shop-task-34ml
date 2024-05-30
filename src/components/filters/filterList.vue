@@ -60,12 +60,12 @@ const handleSearch = () => {
     >
       <input
         type="checkbox"
-        :id="item.title"
-        :value="item.title"
+        :id="item.id"
+        :value="{ title: item.title, id: item.id, type: title.toLowerCase() }"
         v-model="selectedFilters"
         class="h-4 w-4"
       />
-      <label :for="item.title">{{ item.title }}</label>
+      <label :for="item.id">{{ item.title }}</label>
       <span v-if="item.products_count">({{ item.products_count }})</span>
     </div>
   </div>

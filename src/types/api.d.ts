@@ -64,3 +64,9 @@ export type ProductResponse = {
     }[];
   };
 };
+
+export type SelectedFilter = {
+  id: string;
+  title: string;
+  type: string;
+};
