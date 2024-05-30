@@ -5,8 +5,17 @@ import brandFilter from "./brandFilter.vue";
 import commonButton from "../common/button.vue";
 import menuIcon from "../../assets/icons/menu-icon.svg";
 import closeIcon from "../../assets/icons/close-icon.svg";
+import useCategory from "../../composables/useCategory";
+import useBrands from "../../composables/useBrands";
 
 const isMenuOpen = ref(false);
+const { selectedCategoryFilters } = useCategory();
+const { selectedBrandFilters } = useBrands();
+
+const clearAllFilters = () => {
+  selectedCategoryFilters.value = [];
+  selectedBrandFilters.value = [];
+};
 </script>
 
 <template>
@@ -34,11 +43,17 @@ const isMenuOpen = ref(false);
       <div
         class="flex justify-between items-center font-bold text-[16px] py-4 px-5 sm:px-10"
       >
-        <commonButton text="Clear All" type="outline" class="h-12 px-3" />
+        <commonButton
+          text="Clear All"
+          type="outline"
+          class="h-12 px-3"
+          @click="clearAllFilters"
+        />
         <commonButton
           text="View {number} items"
           type="solid"
           class="h-12 px-3"
+          @click="isMenuOpen = false"
         />
       </div>
     </div>
