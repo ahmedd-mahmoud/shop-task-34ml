@@ -12,6 +12,10 @@ defineProps({
     type: String as PropType<"solid" | "outline" | "link">,
     default: "solid",
   },
+  disable: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const typeClass = {
@@ -23,8 +27,9 @@ const typeClass = {
 
 <template>
   <button
-    class="flex items-center gap-2 rounded-md"
+    class="flex items-center gap-2 rounded-md disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:opacity-30"
     :class="typeClass[type]"
+    :disabled="disable"
     @click="$emit('click')"
   >
     <img v-if="icon" :src="icon" alt="icon" :class="typeClass.link" />
