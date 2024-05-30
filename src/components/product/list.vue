@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import useProducts from "../../composables/useProducts.ts";
 import item from "./item.vue";
-import filterBar from "../filters/filterBar.vue";
+import filterBar from "../filters/filterBar/index.vue";
 
 const { products, fetchProducts } = useProducts();
 
