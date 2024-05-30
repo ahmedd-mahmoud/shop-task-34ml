@@ -3,6 +3,7 @@ import { PropType, ref } from "vue";
 import searchbar from "../common/searchbar.vue";
 import plusIcon from "../../assets/icons/plus.svg";
 import minusIcon from "../../assets/icons/minus.svg";
+import emptyIcon from "../../assets/icons/empty-indicator.svg";
 
 const selectedFilters = defineModel("selectedFilters", {
   type: Array as PropType<string[]>,
@@ -67,6 +68,13 @@ const handleSearch = () => {
       />
       <label :for="item.id">{{ item.title }}</label>
       <span v-if="item.products_count">({{ item.products_count }})</span>
+    </div>
+    <div
+      v-show="expand && !filteredList.length"
+      class="flex flex-col justify-center items-center gap-2"
+    >
+      <img :src="emptyIcon" alt="No data" class="w-8" />
+      <p>No {{ title }} found</p>
     </div>
   </div>
   <span class="border-t" />
