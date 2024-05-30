@@ -23,7 +23,7 @@ defineProps({
         <img :src="wishlistIcon" alt="Add to wishlist" />
       </button>
     </div>
-    <p class="font-bold text-lg">{{ brand.title }}</p>
-    <p>{{ brand.default_variant.price }}</p>
+    <p class="text-lg">{{ brand.title }}</p>
+    <p class="font-bold text-lg">{{ brand.default_variant.price }}</p>
   </div>
 </template>
