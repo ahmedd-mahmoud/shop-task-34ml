@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import type { SelectedFilter } from "../../../types/api";
+import { computed, ref } from "vue";
+
+import useCategory from "../../../composables/useCategory";
+import useBrands from "../../../composables/useBrands";
+import useProducts from "../../../composables/useProducts";
+
 import commonButton from "../../common/button.vue";
 import filterIcon from "../../../assets/icons/filter-icon.svg";
 import filterBarItems from "./item.vue";
-import useCategory from "../../../composables/useCategory";
-import useBrands from "../../../composables/useBrands";
-import { computed, ref } from "vue";
-import useProducts from "../../../composables/useProducts";
 import filterMenu from "../filterMenu.vue";
 
 const { selectedCategoryFilters } = useCategory();

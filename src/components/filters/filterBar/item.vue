@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import type { PropType } from "vue";
+import type { SelectedFilter } from "../../../types/api";
 import commonButton from "../../common/button.vue";
 import closeIcon from "../../../assets/icons/close-icon.svg";
-import { SelectedFilter } from "../../../types/api";
-import { PropType } from "vue";
 
 defineProps({
   item: {

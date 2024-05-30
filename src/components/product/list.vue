@@ -3,6 +3,7 @@ import { computed, ref, watchEffect } from "vue";
 import useProducts from "../../composables/useProducts.ts";
 import useCategory from "../../composables/useCategory.ts";
 import useBrands from "../../composables/useBrands.ts";
+
 import item from "./item.vue";
 import filterBar from "../filters/filterBar/index.vue";
 import pagination from "../common/pagination.vue";
@@ -30,7 +31,7 @@ watchEffect(async () => {
 </script>
 
 <template>
-  <div v-if="products" class="flex grow flex-col gap-4">
+  <div v-if="products" class="flex grow flex-col gap-4 lg:pt-20">
     <filterBar />
 
     <div

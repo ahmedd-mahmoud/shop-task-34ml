@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import categoryFilter from "./categoryFilter.vue";
-import brandFilter from "./brandFilter.vue";
-import commonButton from "../common/button.vue";
-import closeIcon from "../../assets/icons/close-icon.svg";
 import useCategory from "../../composables/useCategory";
 import useBrands from "../../composables/useBrands";
 import useProducts from "../../composables/useProducts";
+
+import categoryFilter from "./categoryFilter.vue";
+import brandFilter from "./brandFilter.vue";
+import commonButton from "../common/button.vue";
+
+import closeIcon from "../../assets/icons/close-icon.svg";
 
 const isMenuOpen = defineModel("menu", {
   type: Boolean,

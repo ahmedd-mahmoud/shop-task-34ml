@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { PropType } from "vue";
-import { ProductResponse } from "../../types/api";
+import type { PropType } from "vue";
+import type { ProductResponse } from "../../types/api";
 import commonButton from "../common/button.vue";
 import wishlistIcon from "../../assets/icons/wishlist.svg";
 

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { PropType, watchEffect } from "vue";
+import type { PropType } from "vue";
+import type { Pagination } from "../../types/api";
 import commonButton from "./button.vue";
 import leftIcon from "../../assets/icons/left-icon.svg";
 import rightIcon from "../../assets/icons/right-icon.svg";
-import { Pagination } from "../../types/api";
 
 const currentPage = defineModel("page", {
   type: Number,
@@ -28,10 +28,6 @@ const nextPage = () => {
     currentPage.value++;
   }
 };
-
-watchEffect(() => {
-  console.log(currentPage.value);
-});
 </script>
 
 <template>

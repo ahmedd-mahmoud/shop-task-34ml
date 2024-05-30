@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { PropType, ref } from "vue";
 import searchbar from "../common/searchbar.vue";
+
 import plusIcon from "../../assets/icons/plus.svg";
 import minusIcon from "../../assets/icons/minus.svg";
 import emptyIcon from "../../assets/icons/empty-indicator.svg";
