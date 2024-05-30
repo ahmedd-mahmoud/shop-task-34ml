@@ -9,8 +9,18 @@ export default {
         surface: "#FBFBFB",
         buttonBg: "#00ABEB",
         inputBg: "#F3F3F3",
+        grayBg: "#F5F5F5",
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        ".scrollbar-hidden::-webkit-scrollbar": {
+          display: "none",
+        },
+      };
+      addUtilities(newUtilities);
+    },
+  ],
 };
