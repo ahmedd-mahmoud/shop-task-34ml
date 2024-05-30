@@ -1,6 +1,8 @@
 import { ref } from "vue";
 import { BaseResponse, BrandResponse } from "../types/api";
 
+const selectedBrandFilters = ref<string[]>([]);
+
 const api = "https://grab-n-go.dashboard.hbm.studio/api/v1/brands";
 
 export default function useBrands() {
@@ -15,5 +17,5 @@ export default function useBrands() {
     }
   };
 
-  return { brands, fetchBrands };
+  return { brands, selectedBrandFilters, fetchBrands };
 }

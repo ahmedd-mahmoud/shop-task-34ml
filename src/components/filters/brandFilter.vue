@@ -3,9 +3,8 @@ import { ref } from "vue";
 import useBrands from "../../composables/useBrands.ts";
 import filterList from "./filterList.vue";
 
-const { brands, fetchBrands } = useBrands();
+const { brands, selectedBrandFilters, fetchBrands } = useBrands();
 
-const selectedFilters = ref<string[]>([]);
 const isExpanded = ref(true);
 
 await fetchBrands();
@@ -15,7 +14,7 @@ await fetchBrands();
   <filterList
     v-if="brands"
     title="Brand"
-    v-model:selectedFilters="selectedFilters"
+    v-model:selectedFilters="selectedBrandFilters"
     :list="brands.data"
     :expand="isExpanded"
     @expandClicked="isExpanded = !isExpanded"

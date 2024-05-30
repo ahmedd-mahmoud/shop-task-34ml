@@ -1,6 +1,8 @@
 import { ref } from "vue";
 import { BaseResponse, CategoryResponse } from "../types/api";
 
+const selectedCategoryFilters = ref<string[]>([]);
+
 const api = "https://grab-n-go.dashboard.hbm.studio/api/v1/categories";
 
 export default function useCategory() {
@@ -15,5 +17,5 @@ export default function useCategory() {
     }
   };
 
-  return { categories, fetchCategories };
+  return { categories, selectedCategoryFilters, fetchCategories };
 }

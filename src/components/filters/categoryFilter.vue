@@ -3,9 +3,8 @@ import { ref } from "vue";
 import useCategory from "../../composables/useCategory.ts";
 import filterList from "./filterList.vue";
 
-const { categories, fetchCategories } = useCategory();
+const { categories, selectedCategoryFilters, fetchCategories } = useCategory();
 
-const selectedFilters = ref<string[]>([]);
 const isExpanded = ref(true);
 
 await fetchCategories();
@@ -15,7 +14,7 @@ await fetchCategories();
   <filterList
     v-if="categories"
     title="Category"
-    v-model:selectedFilters="selectedFilters"
+    v-model:selectedFilters="selectedCategoryFilters"
     :list="categories.data"
     :expand="isExpanded"
     @expandClicked="isExpanded = !isExpanded"
