@@ -5,9 +5,11 @@ import filterBarItems from "./item.vue";
 import useCategory from "../../../composables/useCategory";
 import useBrands from "../../../composables/useBrands";
 import { computed } from "vue";
+import useProducts from "../../../composables/useProducts";
 
 const { selectedCategoryFilters } = useCategory();
 const { selectedBrandFilters } = useBrands();
+const { products } = useProducts();
 
 const filterItems = computed(() => {
   return [...selectedCategoryFilters.value, ...selectedBrandFilters.value];
@@ -40,7 +42,9 @@ const removeFilter = (filter: string) => {
         {{ filterItems.length > 0 ? `(${filterItems.length})` : "" }}
       </span>
       <span class="hidden lg:inline whitespace-nowrap">Hide Filters</span>
-      <span class="inline lg:hidden border-l pl-2"> {number} Items</span>
+      <span class="inline lg:hidden border-l pl-2">
+        {{ products?.data.length }} Items</span
+      >
     </commonButton>
     <div
       class="flex gap-2 w-fit max-w-64 min-[550px]:max-w-[500px] lg:pl-2 scrollbar-hidden overflow-x-auto"
@@ -51,6 +55,8 @@ const removeFilter = (filter: string) => {
         @remove="removeFilter(item)"
       />
     </div>
-    <span class="hidden lg:inline border-l pl-3"> {number} Items</span>
+    <span class="hidden lg:inline border-l pl-3">
+      {{ products?.data.length }} Items</span
+    >
   </div>
 </template>

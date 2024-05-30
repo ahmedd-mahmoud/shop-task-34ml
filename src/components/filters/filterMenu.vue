@@ -7,10 +7,12 @@ import menuIcon from "../../assets/icons/menu-icon.svg";
 import closeIcon from "../../assets/icons/close-icon.svg";
 import useCategory from "../../composables/useCategory";
 import useBrands from "../../composables/useBrands";
+import useProducts from "../../composables/useProducts";
 
 const isMenuOpen = ref(false);
 const { selectedCategoryFilters } = useCategory();
 const { selectedBrandFilters } = useBrands();
+const { products } = useProducts();
 
 const clearAllFilters = () => {
   selectedCategoryFilters.value = [];
@@ -50,7 +52,7 @@ const clearAllFilters = () => {
           @click="clearAllFilters"
         />
         <commonButton
-          text="View {number} items"
+          :text="`View ${products?.data.length} items`"
           type="solid"
           class="h-12 px-3"
           @click="isMenuOpen = false"
