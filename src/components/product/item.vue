@@ -13,7 +13,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="flex flex-col items-start">
+  <div class="flex flex-col w-60 items-start">
     <div class="relative">
       <img
         :src="brand.featured_image"

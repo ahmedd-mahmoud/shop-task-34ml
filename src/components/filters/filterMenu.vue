@@ -37,13 +37,13 @@ const clearAllFilters = () => {
           @click="isMenuOpen = false"
         />
       </div>
-      <div class="flex flex-col gap-5 px-5 sm:px-10">
+      <div class="flex flex-col gap-3 px-5 sm:px-10">
         <categoryFilter />
         <brandFilter />
       </div>
 
       <div
-        class="flex justify-between items-center font-bold text-[16px] py-4 px-5 sm:px-10"
+        class="flex justify-between items-center font-bold text-[16px] px-5 sm:px-10"
       >
         <commonButton
           text="Clear All"
