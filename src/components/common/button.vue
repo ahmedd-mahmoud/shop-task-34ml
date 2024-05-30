@@ -23,7 +23,7 @@ const typeClass = {
 
 <template>
   <button
-    class="flex items-center gap-2 rounded-lg"
+    class="flex items-center gap-2 rounded-md"
     :class="typeClass[type]"
     @click="$emit('click')"
   >
