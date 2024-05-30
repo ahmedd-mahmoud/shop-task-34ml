@@ -1,16 +1,19 @@
 <script setup lang="ts">
+import type { SelectedFilter } from "../../../types/api";
 import commonButton from "../../common/button.vue";
 import filterIcon from "../../../assets/icons/filter-icon.svg";
 import filterBarItems from "./item.vue";
 import useCategory from "../../../composables/useCategory";
 import useBrands from "../../../composables/useBrands";
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import useProducts from "../../../composables/useProducts";
-import { SelectedFilter } from "../../../types/api";
+import filterMenu from "../filterMenu.vue";
 
 const { selectedCategoryFilters } = useCategory();
 const { selectedBrandFilters } = useBrands();
 const { products } = useProducts();
+
+const isMenuOpen = ref(false);
 
 const filterItems = computed(() => {
   return [...selectedCategoryFilters.value, ...selectedBrandFilters.value];
@@ -27,6 +30,12 @@ const removeFilter = (filter: SelectedFilter) => {
     );
   }
 };
+
+const openMenu = () => {
+  if (window.innerWidth < 1024) {
+    isMenuOpen.value = true;
+  }
+};
 </script>
 
 <template>
@@ -36,6 +45,7 @@ const removeFilter = (filter: SelectedFilter) => {
     <commonButton
       :icon="filterIcon"
       type="link"
+      @click="openMenu"
       class="flex py-1 px-2 md:pl-2 md:pr-10 lg:mr-3 lg:border lg:border-gray-500 lg:!rounded-[4px] text-title"
     >
       <span class="inline lg:hidden font-bold">
@@ -59,5 +69,7 @@ const removeFilter = (filter: SelectedFilter) => {
     <span class="hidden lg:inline border-l pl-3">
       {{ products?.data.length }} Items</span
     >
+
+    <filterMenu v-model:menu="isMenuOpen" />
   </div>
 </template>

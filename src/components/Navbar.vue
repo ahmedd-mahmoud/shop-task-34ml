@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import commonButton from "./common/button.vue";
-import filterMenu from "./filters/filterMenu.vue";
+import menuIcon from "../assets/icons/menu-icon.svg";
 
 const navigationButtons = [
   "Grocery",
@@ -29,6 +29,6 @@ const navigationButtons = [
       class="font-bold hidden lg:flex"
     />
 
-    <filterMenu />
+    <commonButton :icon="menuIcon" type="link" class="lg:hidden" />
   </div>
 </template>
