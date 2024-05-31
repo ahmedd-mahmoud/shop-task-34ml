@@ -4,6 +4,7 @@ import type { Pagination } from "../../types/api";
 import commonButton from "./button.vue";
 import leftIcon from "../../assets/icons/left-icon.svg";
 import rightIcon from "../../assets/icons/right-icon.svg";
+import { useRouter } from "vue-router";
 
 const currentPage = defineModel("page", {
   type: Number,
@@ -17,15 +18,22 @@ const props = defineProps({
   },
 });
 
+const router = useRouter();
+
+const navigateToPage = (pageNumber: number) => {
+  currentPage.value = pageNumber;
+  router.push(`/?page=${pageNumber}`);
+};
+
 const prevPage = () => {
   if (currentPage.value > 1) {
-    currentPage.value--;
+    navigateToPage(currentPage.value - 1);
   }
 };
 
 const nextPage = () => {
   if (currentPage.value < props.listInfo.last_page) {
-    currentPage.value++;
+    navigateToPage(currentPage.value + 1);
   }
 };
 </script>
@@ -45,7 +53,7 @@ const nextPage = () => {
       :key="pageNumber"
       :text="pageNumber.toString()"
       type="link"
-      @click="currentPage = pageNumber"
+      @click="navigateToPage(pageNumber)"
       class="flex items-center justify-center h-10 w-10 border border-gray-500 text-title"
       :class="currentPage === pageNumber ? 'bg-black text-white' : 'text-title'"
     />

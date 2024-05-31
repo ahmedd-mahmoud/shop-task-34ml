@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, watchEffect } from "vue";
+import { useRoute } from "vue-router";
+
 import useProducts from "../../composables/useProducts.ts";
 import useCategory from "../../composables/useCategory.ts";
 import useBrands from "../../composables/useBrands.ts";
@@ -13,8 +15,9 @@ import emptyIcon from "../../assets/icons/empty-indicator.svg";
 const { products, fetchProducts } = useProducts();
 const { selectedCategoryFilters } = useCategory();
 const { selectedBrandFilters } = useBrands();
+const route = useRoute();
 
-const currentPage = ref(1);
+const currentPage = ref(Number(route.query.page) || 1);
 const loading = ref(false);
 
 const filterItems = computed(() => {
@@ -23,9 +26,6 @@ const filterItems = computed(() => {
 
 watchEffect(async () => {
   loading.value = true;
-  if (filterItems.value.length > 0) {
-    currentPage.value = 1;
-  }
   await fetchProducts(filterItems.value, currentPage.value);
   loading.value = false;
 });
