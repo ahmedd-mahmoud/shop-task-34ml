@@ -60,7 +60,7 @@ const openMenu = () => {
       >
     </commonButton>
     <div
-      class="flex gap-2 w-fit max-w-64 min-[550px]:max-w-[500px] scrollbar-hidden overflow-x-auto"
+      class="flex gap-2 w-fit max-w-64 min-[430px]:max-w-96 min-[550px]:max-w-[500px] scrollbar-hidden overflow-x-auto"
     >
       <filterBarItems
         v-for="item in filterItems"
